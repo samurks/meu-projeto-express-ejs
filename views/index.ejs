@@ -1,60 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>Projeto Express e EJS</title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Projeto Express e EJS</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
-<br>
+
 <body>
     <h1>LISTA DE PRODUTOS</h1>
     <br><br>
-    <% for (let produto of produtos){ %>
     <div class="container text-center">
-    <div class="row align-items-center">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="https://static3.tcdn.com.br/img/img_prod/901504/tenis_tesla_coil_ice_3231_1_9e2f5701065df2fa77ca9752019462a8.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tesla Coil</h5>
-              <p class="card-text">R$ 359</p>
-              <a href="/produto" class="btn btn-primary">Adquira Agora!</a>
-            </div>
-          </div>
-      </div>
-
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="https://cdn.awsli.com.br/600x700/1702/1702086/produto/214885673bfa7fe5c09.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Vans Old Skool</h5>
-              <p class="card-text">R$ 399</p>
-              <a href="/produto" class="btn btn-primary">Adquira Agora!</a>
-            </div>
-          </div>
-      </div>
-
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="https://cdn.awsli.com.br/600x1000/1167/1167039/produto/217818858/3-s3tk9bnles.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nike Dunk Low</h5>
-              <p class="card-text">R$ 1399</p>
-              <a href="/produto" class="btn btn-primary">Adquira Agora!</a>
-            </div>
-          </div>
-      </div>
-    </div>
+          <div class="row">
+    <% for (let produto of produtos){ %>
+                <div class="card" style="flex: 0 0 18rem; margin:10px;">
+                    <img src="<%=produto.imagem%>" class="img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=produto.nome%></h5>
+                        <p class="card-text">R$<%=produto.preco%></p>
+                        <a href="/produtos/<%= produto.id %>" class="btn btn-primary">Adquira Agora!</a>
+                    </div>
+                  </div>
+    <% } %>
   </div>
-  <br><br>
-  <% } %>  
-
-  
-
- 
-
-  <br><br>
-
+</div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </html>
